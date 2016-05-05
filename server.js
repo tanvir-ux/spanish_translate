@@ -25,14 +25,6 @@ app.use(bodyParser.json());
 
 var constring = process.env.OPENSHIFT_MONGODB_DB_URL;
 mongoose.connect('constring');
-var db = mongoose.connection;
-
-// Test mongo connection
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-    // Connected! 
-    console.log("Successfully connected to mongodb");
-});
 
 
 /******************** ROUTES **********************/
